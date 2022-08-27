@@ -1,0 +1,39 @@
+<h4>Greeting {{username}}</h4>
+{% if image %}
+        <div>
+            <img src={{image}} width="400" height="200">
+        </div>
+    {% endif %}
+</div>
+<h4>Add Anime</h4>
+            <p>Enter the details below to add them in anime DB on rds</p>
+            <form action="/insert" method="POST">
+              <div class="form-group">
+                <label for="usr">ranking:</label>
+                <input name="ranking" type="text" class="form-control" id="usr">
+              </div>
+              <div class="form-group">
+                <label for="pwd">name:</label>
+                <input name="name" type="text" class="form-control" id="pwd">
+              </div>
+              <div class="form-group">
+                <label for="pwd">genre</label>
+                <input name="genere" type="text" class="form-control" id="pwd">
+              </div>
+              <br>
+              <input type="submit" name="submit" value="Submit" class="btn btn-success">
+            </form>
+<h4>Delete Anime</h4>
+<p>Enter the details below to delete them from anime DB on rds</p>
+<form action="/delete" method="POST">
+  <div class="form-group">
+    <label for="pwd">name:</label>
+    <input name="name" type="text" class="form-control" id="pwd">
+  </div>
+  <br>
+  <input type="submit" name="submit" value="Submit" class="btn btn-success">
+      {% if show_results %}
+      <p class="bottom"><a class="bottom" href="/find">Admin Functionalities</a></p>
+      {% endif %}
+</form>
+
